@@ -27,5 +27,8 @@
 <b>Your Authentication type:</b>
 <%Response.Write(Request.ServerVariables("AUTH_TYPE"))%>
 </p>
+<p>
+added
+</p>
 </body>
 </html> 
