@@ -25,7 +25,7 @@
 <%Response.Write(Request.ServerVariables("server_port"))%>
 </p>
 <b>Your Authentication type:</b>
-<%Response.Write(Request.ServerVariables("AUTH_TYPE"))%>
+<%Response.Write(Request.ServerVariables("auth_type"))%>
 </p>
 <p>
 added
