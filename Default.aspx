@@ -27,8 +27,16 @@
 <b>Your Authentication type:</b>
 <%Response.Write(Request.ServerVariables("auth_type"))%>
 </p>
-<p>
-added
+<b>Your Application Path:</b>
+<%Response.Write(Request.ServerVariables("APPL_PHYSICAL_PATH"))%>
+</p>
+</p>
+<b>Authorized User from client side:</b>
+<%Response.Write(Request.ServerVariables("AUTH_USER"))%>
+</p>
+</p>
+<b>Name of the web server:</b>
+<%Response.Write(Request.ServerVariables("HTTP_HOST"))%>
 </p>
 </body>
 </html> 
