@@ -1,0 +1,33 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 
+kind: Deployment 
+metadata: 
+  name: aspx-deployment 
+spec: 
+  selector: 
+    matchLabels: 
+      app: asp-net 
+  replicas: 2 # tells deployment to run 2 pods matching the template 
+  template:
+    metadata: 
+      labels: 
+        app: asp-net 
+    spec: 
+      containers: 
+      - name: asp 
+        image: praneshhzl/drop:16
+        ports: 
+        - containerPort: 80 
+--- 
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
+kind: Service 
+apiVersion: v1 
+metadata: 
+  name: asp-lb-service 
+spec: 
+  selector: 
+    app: angular 
+  ports: 
+  - protocol: TCP 
+    port: 80 
+    targetPort: 80 
+  type: LoadBalancer
