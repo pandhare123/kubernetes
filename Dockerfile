@@ -2,7 +2,6 @@ FROM mcr.microsoft.com/windows/servercore/iis
 
 SHELL ["powershell"]
 
-RUN docker cp '//c/inetpub/wwwroot/default.aspx' ($Build.ContainerId):c/inetpub/wwwroot ; \
-    docker cp '//c/inetpub/wwwroot/web.config' ($Build.ContainerId):c/inetpub/wwwroot
+RUN Copy-Item "C:\inetpub\wwwroot" -Destination "($Build.ContainerId):c/inetpub/wwwroot" -Force
     
 EXPOSE 80
