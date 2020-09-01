@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/windows/servercore/iis
 
-SHELL ["powershell"]
+RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
 
-RUN docker cp c:\inetpub\wwwroot\default.aspx ($Build.ContainerId):/c/inetpub/wwwroot
+WORKDIR /inetpub/wwwroot
 
-EXPOSE 80
+COPY content/ .
