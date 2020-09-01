@@ -4,8 +4,7 @@ SHELL ["powershell"]
 
 RUN Install-WindowsFeature NET-Framework-45-ASPNET ; \
     Install-WindowsFeature Web-Asp-Net45
-WORKDIR //c/inetpub/wwwroot
-COPY Default.aspx Default.aspx
-COPY web.config web.config
+    docker cp '//c/inetpub/wwwroot/default.aspx' ($Build.ContainerId):c/inetpub/wwwroot
+    docker cp '//c/inetpub/wwwroot/web.config' ($Build.ContainerId):c/inetpub/wwwroot
     
 EXPOSE 80
