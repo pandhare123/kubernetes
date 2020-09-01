@@ -2,8 +2,6 @@ FROM mcr.microsoft.com/windows/servercore/iis
 
 SHELL ["powershell"]
 
-RUN Write-Host $Build.ContainerId
-
-RUN Copy-Item "C:\inetpub\wwwroot\*" -Destination "($Build.ContainerId):c\inetpub\wwwroot" -Force
+RUN docker cp c:\inetpub\wwwroot\default.aspx ($Build.ContainerId):/c/inetpub/wwwroot
 
 EXPOSE 80
