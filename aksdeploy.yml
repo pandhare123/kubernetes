@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: angular
+      app: asp-net
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
