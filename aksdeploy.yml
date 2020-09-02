@@ -17,8 +17,7 @@ spec:
         image: praneshhzl/drop:40
         ports:
         - containerPort: 80
----
-# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+
 kind: Service
 apiVersion: v1
 metadata:
