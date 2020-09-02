@@ -17,7 +17,6 @@ spec:
         image: praneshhzl/drop:40
         ports:
         - containerPort: 80
-
 kind: Service
 apiVersion: v1
 metadata:
