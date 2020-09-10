@@ -3,6 +3,15 @@ kind: Deployment
 metadata:
   name: aspx-deployment
 spec:
+affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: os
+            operator: In
+            values:
+            - windows
   selector:
     matchLabels:
       app: asp-net
