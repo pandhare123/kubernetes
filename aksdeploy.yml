@@ -12,6 +12,15 @@ spec:
       labels:
         app: asp-net
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: os
+                operator: In
+                values:
+                - windows 
       containers:
       - name: asp
         image: praneshhzl/drop:40
